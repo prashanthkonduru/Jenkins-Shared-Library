@@ -5,7 +5,7 @@ properties([parameters([choice(choices: ['SNAPSHOT', 'RELEASE'], description: 'S
 stage('Demo') 
 {
     echo 'Hello Vamsi'
-    sayHello 'Dave'
+    
 }
 
 }
