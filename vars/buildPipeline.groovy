@@ -4,10 +4,13 @@ properties([parameters([choice(choices: ['SNAPSHOT', 'RELEASE'], description: 'S
 
 stage('Demo') 
 {
+    def mvn_version = "Maven"
     echo 'Welcome to DevOps'
     if (params.BUILD == 'SNAPSHOT')    
 	{
 	echo 'Prashanth'
+	withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"])
+	sh "mvn clean install"
 	}
 	else
 	{
