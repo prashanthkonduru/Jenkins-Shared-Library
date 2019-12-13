@@ -4,8 +4,16 @@ properties([parameters([choice(choices: ['SNAPSHOT', 'RELEASE'], description: 'S
 
 stage('Demo') 
 {
-    echo 'Hello Vamsi'
-    
+    echo 'Welcome to DevOps'
+    if (params.BUILD == 'SNAPSHOT')    
+	{
+	echo 'Prashanth'
+	}
+	else
+	{
+	echo 'Vamsi is great'
+	}
 }
+
 
 }
