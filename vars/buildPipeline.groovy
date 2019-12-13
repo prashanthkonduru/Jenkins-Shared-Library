@@ -1,7 +1,7 @@
 def call(Map buildParam)
 {
 properties([parameters([choice(choices: ['SNAPSHOT', 'RELEASE'], description: 'Select type', name: 'BUILD')])])
-node()
+node
 stage('Demo') 
 {
     def mvn_version = "Maven"
