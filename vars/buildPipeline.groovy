@@ -12,7 +12,7 @@ node()
 			echo 'Prashanth'
 			withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"])
 			{
-				sh "mvn clean install"
+				sh "mvn --batch-mode clean install"
 			}
 		}
 		else
