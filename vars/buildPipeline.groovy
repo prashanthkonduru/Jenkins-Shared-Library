@@ -2,7 +2,11 @@ def call(Map buildParam)
 {
 properties([parameters([choice(choices: ['SNAPSHOT', 'RELEASE'], description: 'Select type', name: 'BUILD')])])
 node()
-{
+{       
+	stage('checkout code')
+	{
+	sh "git credentialsId: 'cred_Library', url: 'https://github.com/prashanthkonduru/maven-web-application.git'"
+	}
 	stage('Demo')
 	{
 		def mvn_version = "maven"
