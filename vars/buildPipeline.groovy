@@ -5,7 +5,10 @@ node()
 {       
 	stage('checkout code')
 	{
-	  "git branch: 'development', credentialsId: 'cred_Library', url: 'https://github.com/prashanthkonduru/maven-web-application.git'"
+	  checkout([$class: 'GitSCM', branches: [[name: '*/development']], 
+		    doGenerateSubmoduleConfigurations: false, extensions: [], 
+		    submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'cred_Library', 
+                    url: 'https://github.com/prashanthkonduru/maven-web-application.git']]])
 	}
 	stage('Demo')
 	{
