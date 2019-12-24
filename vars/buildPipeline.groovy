@@ -5,7 +5,7 @@ node()
 {       
 	stage('checkout code')
 	{
-	sh "git branch: 'development', credentialsId: 'cred_Library', url: 'https://github.com/prashanthkonduru/maven-web-application.git'"
+	  "git branch: 'development', credentialsId: 'cred_Library', url: 'https://github.com/prashanthkonduru/maven-web-application.git'"
 	}
 	stage('Demo')
 	{
