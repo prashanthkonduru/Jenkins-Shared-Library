@@ -12,7 +12,7 @@ node()
 	}
 	stage('Demo')
 	{
-		def mvn_version = "maven3.6.3"
+		def mvn_version = "maven"
 		echo 'Welcome to DevOps'
 		if (params.BUILD == 'SNAPSHOT')    
 		{
