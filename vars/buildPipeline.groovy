@@ -5,10 +5,10 @@ node()
 {       
 	stage('checkout code')
 	{
-	  checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+	  checkout([$class: 'GitSCM', branches: [[name: '*/deploy']], 
 		    doGenerateSubmoduleConfigurations: false, extensions: [], 
 		    submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'cred_Library', 
-                    url: 'https://github.com/prashanthkonduru/maven-web-application-JFrog.git']]])
+                    url: 'https://github.com/prashanthkonduru/maven-web-application.git']]])
 	}
 	stage('Demo')
 	{
@@ -19,7 +19,7 @@ node()
 			echo 'Prashanth'
 			withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"])
 			{
-				sh "mvn --batch-mode clean deploy"
+				sh "mvn --batch-mode clean install"
 			}
 		}
 		else
