@@ -8,7 +8,7 @@ node()
 	  checkout([$class: 'GitSCM', branches: [[name: '*/deploy']], 
 		    doGenerateSubmoduleConfigurations: false, extensions: [], 
 		    submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'cred_Library', 
-                    url: 'https://github.com/prashanthkonduru/maven-web-application.git']]])
+                    url: 'https://github.com/prashanthkonduru/maven-web-application-JFrog.git']]])
 	}
 	stage('Demo')
 	{
